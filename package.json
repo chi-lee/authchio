@@ -1,5 +1,5 @@
 {
-  "name": "authechio",
+  "name": "authchio",
   "version": "1.0.0",
   "description": "Authentication and authorization middleware for Node.js application",
   "main": "index.js",

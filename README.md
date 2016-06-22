@@ -1,5 +1,10 @@
 # Authchio
 Authentication and authorization middleware for Node.js application
+## Installation
+First install [Node.js](http://nodejs.org/) and [MongoDB](https://www.mongodb.org/downloads). Then:
+```
+$ npm install authchio
+```
 ## Usage
 ### Connect to MongoDB
 ```
