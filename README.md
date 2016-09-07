@@ -16,7 +16,7 @@ authchio.connect("mongodb://localhost/test", err =>
 ```
 ### Add strategy
 ```
-authchio.addFacebookCookiesAuthenticator("facebook", { appId: xxx, appSecret: xxx, expiresIn: 3600 * 24, secure: true });
+authchio.addFacebookCookiesStrategy("facebook", { appId: xxx, appSecret: xxx, expiresIn: 3600 * 24, secure: true });
 ```
 ### Register user
 ```
