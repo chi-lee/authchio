@@ -16,10 +16,15 @@ authchio.connect("mongodb://localhost/test", err =>
 ```
 ### Add strategy
 ```
+authchio.addCredentialsCookiesStrategy("credentials", { expiresIn: 3600 * 24 });
 authchio.addFacebookCookiesStrategy("facebook", { appId: xxx, appSecret: xxx, expiresIn: 3600 * 24, secure: true });
 ```
 ### Register user
 ```
+authchio.register("credentials", request, response, { username: "foo", password: "bar" }, (err, isSuccessful) =>
+{
+  // Create app specific profile
+});
 authchio.register("facebook", request, response, { userToken: xxx }, (err, isSuccessful) =>
 {
   // Create app specific profile
@@ -27,6 +32,11 @@ authchio.register("facebook", request, response, { userToken: xxx }, (err, isSuc
 ```
 ### Log user in
 ```
+authchio.token("credentials", request, response, { username: "foo", password: "bar" }, (err, isSuccessful) =>
+{
+    if(err) // database/server error
+    if(!isSuccessful) // no user / wrong password
+});
 authchio.token("facebook", request, response, { userToken: xxx }, (err, isSuccessful) =>
 {
   // Update latest login timestamp
@@ -39,3 +49,10 @@ authchio.authenticate(request, response, {}, (err, user) =>
   if(!user) return; // login failed
 });
 ```
+### Log user out
+```
+authchio.revoke("credentials", request, response, null, (err, isSuccessful) =>
+{
+});
+```
+
