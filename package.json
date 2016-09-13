@@ -1,6 +1,6 @@
 {
   "name": "authchio",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Authentication and authorization middleware for Node.js application",
   "main": "index.js",
   "scripts": {
